@@ -7,12 +7,7 @@ public class Canvas{
     private JFrame frame;
     private JPanel contentPanel;
     private ImageIcon icon;
-
-    public Canvas(){
-
-        //createCanvas();
-    }
-
+    
     public void createCanvas(){
 
         frame = new JFrame();

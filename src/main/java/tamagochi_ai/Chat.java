@@ -8,6 +8,7 @@ public class Chat {
     private JTextArea area;
     private JTextField text;
     private Canvas canvas;
+    private String userText;
 
 
     public void createChat(Canvas canvas){
@@ -27,10 +28,24 @@ public class Chat {
         text.setPreferredSize(new Dimension(450, 50));
         chatPanel.add(text, BorderLayout.SOUTH);
         canvas.addComponent(getPanel());
+        printMessage();
     }
 
     public JPanel getPanel(){
         return chatPanel;
+    }
+
+    private void sendMessage(){
+
+        userText = text.getText().trim();
+        if(!userText.isEmpty()){
+            area.append("You: "+userText+"\n");
+        }
+    }
+
+    public void printMessage(){
+
+        text.addActionListener(e -> sendMessage());
     }
     
 }
